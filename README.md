@@ -1,17 +1,26 @@
 # imstillalive.xyz
+
 I'm Still Alive - Uptime/Pinger thing for .. whatever
 
 
 # Quickstart
 
-## It's a two step process:
+There's one generic endpoint, which takes the form:
 
-### 1. Ping with name of thing
+`http://imstillalive.xyz/ping/<thing>`
 
-    curl http://imstillalive.xyz/ping/foo
+## Ping via PUT
 
-### 2. Check to see if thing happened in the last N seconds (currently set to 1200, 20 min)
+To ping with the name of a `thing`, as if to say "I'm alive!", issue a PUT request
 
-    curl http://imstillalive.xyz/check/foo
+    curl -X PUT "http://imstillalive.xyz/ping/foo"
 
-This will return a 200 and how many seconds have elapsed, or 404 if the time window is up.
+## Check via GET
+
+To see if a `thing` has pinged in the last N seconds (currently N=1200, or 20 min), issue a GET request
+
+    curl -X GET "http://imstillalive.xyz/ping/foo"
+
+If the `thing` has pinged in the last N seconds, this will return a 200.
+
+If the `thing` is unknown, or the time window is up, it will return a 404

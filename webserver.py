@@ -20,15 +20,15 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/ping/<thing>')
-def ping(thing):
+@app.route('/ping/<thing>', methods=['PUT'])
+def ping_put(thing):
     now = time.time()
     last_ping[thing] = now
     return "%s %s" % (thing, now)
 
 
-@app.route('/check/<thing>')
-def check(thing):
+@app.route('/ping/<thing>', methods=['GET'])
+def ping_get(thing):
     if thing not in last_ping:
         response = u"No such thing as %s" % thing
         return response, 404
