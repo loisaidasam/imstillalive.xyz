@@ -17,7 +17,6 @@ last_ping = {}
 
 @app.route('/')
 def index():
-    # return 'Hello, World!'
     return render_template('index.html')
 
 
