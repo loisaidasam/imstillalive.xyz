@@ -1,1 +1,1 @@
-web: gunicorn webserver:app --log-file=-
+web: gunicorn webserver:app --workers=1 --threads=1 --log-file=-
