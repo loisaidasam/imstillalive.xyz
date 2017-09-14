@@ -5,7 +5,8 @@ from flask import Flask, render_template
 
 
 # DEFAULT_EXPIRATION = 10  # 10 sec
-DEFAULT_EXPIRATION = 60 * 10  # 10 min
+# DEFAULT_EXPIRATION = 60 * 10  # 10 min
+DEFAULT_EXPIRATION = 60 * 20  # 20 min
 
 
 app = Flask(__name__)

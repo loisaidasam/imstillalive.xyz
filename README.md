@@ -10,7 +10,7 @@ I'm Still Alive - Uptime/Pinger thing for .. whatever
 
     curl http://imstillalive.xyz/ping/foo
 
-### 2. Check to see if thing happened in the last N seconds (currently set to 600, 10 min)
+### 2. Check to see if thing happened in the last N seconds (currently set to 1200, 20 min)
 
     curl http://imstillalive.xyz/check/foo
 
